@@ -1,0 +1,3 @@
+task: examples/06_custom_grader_inst.py
+model: openai/gpt-4o
+

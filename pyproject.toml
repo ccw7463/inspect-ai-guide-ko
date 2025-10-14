@@ -1,0 +1,92 @@
+[project]
+name = "inspect-ai-guide-ko"
+version = "0.1.0"
+description = "Inspect AI 프레임워크 학습 및 테스트를 위한 저장소"
+authors = [
+    {name = "ccw7463", email = "changwoo7463@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "inspect-ai>=0.3.0",
+    "openai>=1.0.0",
+    "anthropic>=0.20.0",
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.0",
+    "datasets>=4.2.0",
+    "pre-commit>=3.6.0",
+    "commitizen>=3.13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.1.0",
+    "isort>=5.13.2",
+    "flake8>=7.0.0",
+    "flake8-docstrings>=1.7.0",
+    "mypy>=1.8.0",
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "bandit>=1.7.5",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+tag_format = "v$version"
+version_scheme = "pep440"
+version_provider = "pep621"
+update_changelog_on_bump = true
+major_version_zero = true
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["inspect_ai"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+exclude = [
+    "venv/",
+    ".venv/"
+]
+
+[tool.bandit]
+exclude_dirs = ["venv", ".venv"]
+skips = ["B101"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+pythonpath = ["."]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+

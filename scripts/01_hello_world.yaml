@@ -1,0 +1,4 @@
+task: examples/01_hello_world.py
+model: openai/gpt-4o
+options: []
+

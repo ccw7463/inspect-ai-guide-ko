@@ -1,0 +1,6 @@
+task: examples/04_mathematics.py
+model: openai/gpt-4o
+options:
+  - --limit
+  - "50"
+

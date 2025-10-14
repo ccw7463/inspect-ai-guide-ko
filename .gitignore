@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Inspect AI
+# Ignore Inspect AI logs and evaluation results
+.inspect_ai/
+logs/
+*.log.json
+eval_results/
