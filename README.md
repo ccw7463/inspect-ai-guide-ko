@@ -46,9 +46,9 @@ cp env.example .env
 uv run python run.py 01
 ```
 
-**또는 직접 실행:**
+**사용 가능한 예제 목록 보기:**
 ```bash
-uv run inspect eval examples/01_hello_world.py --model openai/gpt-4o
+uv run python run.py --list
 ```
 
 ## 모든 예제
@@ -59,17 +59,32 @@ uv run python run.py 01  # Hello World
 uv run python run.py 02  # Security Guide  
 uv run python run.py 03  # Multiple Choices (HellaSwag, 50개 샘플)
 uv run python run.py 04  # Mathematics (GSM8K, 50개 샘플)
-
-# 직접 실행하는 방법 (Python 파일 직접 지정)
-uv run inspect eval examples/01_hello_world.py --model openai/gpt-4o
-uv run inspect eval examples/02_security_guide.py --model openai/gpt-4o
-uv run inspect eval examples/03_multiple_choices.py --model openai/gpt-4o --limit 50
-uv run inspect eval examples/04_mathematics.py --model openai/gpt-4o --limit 50
-
-# 다른 모델로 실행
-uv run python run.py 01 --model gpt-4o-mini
-uv run python run.py 03 --model anthropic/claude-3-5-sonnet-20241022
+uv run python run.py 05  # Tool Use
+uv run python run.py 06  # Custom Grader Instance
+uv run python run.py 07  # Custom Grader Template
+uv run python run.py 08  # Multi Turn
+uv run python run.py 09  # JSON
+uv run python run.py 10  # All Attack Test
 ```
+
+## 모델 설정
+
+모든 모델 설정은 `config.yaml` 파일에서 관리됩니다:
+
+```yaml
+# 기본 모델 설정
+default_model: openai/gpt-4o
+
+# 예제별 개별 설정
+examples:
+  "01":
+    name: "Hello World"
+    task: examples/01_hello_world.py
+    model: openai/gpt-4o  # 이 예제만 다른 모델 사용 가능
+    options: []
+```
+
+모델을 변경하려면 `config.yaml` 파일을 편집하세요.
 
 ## 참고 자료
 

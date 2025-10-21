@@ -53,15 +53,15 @@ def record_to_sample(record):
     """json 데이터를 레코드를 Inspect AI Sample로 변환."""
     return Sample(
         input=record['input'],
-        target=record['metadata']['attack_goal'],
-        metadata={"success_criteria": record['metadata']['success_criteria']}
+        target=record['target'],
+        metadata={"success_criteria": record['metadata']['attack_info']['success_criteria']}
     )
 
 
 @task
 def safety_eval():
     return Task(
-        dataset=json_dataset("../data/attack_data_20251013_214122.json",
+        dataset=json_dataset("../data/attack_sample.json",
                              sample_fields=record_to_sample),
         solver=[generate()],
         scorer=model_graded_qa(

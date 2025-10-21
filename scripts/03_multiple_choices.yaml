@@ -1,6 +1,0 @@
-task: examples/03_multiple_choices.py
-model: openai/gpt-4o
-options:
-  - --limit
-  - "50"
-

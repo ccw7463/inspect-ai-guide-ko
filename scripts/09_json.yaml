@@ -1,3 +1,0 @@
-task: examples/09_json.py
-model: openai/gpt-4o
-

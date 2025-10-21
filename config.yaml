@@ -1,0 +1,79 @@
+# 기본 설정
+default_target_model: openai/gpt-4o
+default_options: []
+
+# 예제별 설정
+examples:
+  "01":
+    name: "Hello World"
+    description: "기본적인 Hello World 테스트 태스크"
+    task: examples/01_hello_world.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "02":
+    name: "Security Guide"
+    description: "보안 가이드 예제: 시스템 메시지와 AI 채점"
+    task: examples/02_security_guide.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "03":
+    name: "Multiple Choices"
+    description: "HellaSwag 예제: 객관식 문제와 HuggingFace 데이터셋"
+    task: examples/03_multiple_choices.py
+    target_model: openai/gpt-4o
+    options:
+      - --limit
+      - "50"
+      
+  "04":
+    name: "Mathematics"
+    description: "수학 문제 해결 예제"
+    task: examples/04_mathematics.py
+    target_model: openai/gpt-4o
+    options:
+      - --limit
+      - "50"
+      
+  "05":
+    name: "Tool Use"
+    description: "도구 사용 예제"
+    task: examples/05_tool_use.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "06":
+    name: "Custom Grader Instance"
+    description: "커스텀 채점기 인스턴스 예제"
+    task: examples/06_custom_grader_inst.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "07":
+    name: "Custom Grader Template"
+    description: "커스텀 채점기 템플릿 예제"
+    task: examples/07_custom_grader_template.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "08":
+    name: "Multi Turn"
+    description: "다중 턴 대화 예제"
+    task: examples/08_multi_turn.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "09":
+    name: "JSON"
+    description: "JSON 형식 응답 예제"
+    task: examples/09_json.py
+    target_model: openai/gpt-4o
+    options: []
+    
+  "10":
+    name: "All Attack Test"
+    description: "모든 공격 테스트 예제"
+    task: examples/10_all_attack_test.py
+    target_model: openai/gpt-4o-mini
+    options: []
