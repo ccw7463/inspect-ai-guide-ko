@@ -3,7 +3,7 @@
 **Inspect AI**는 AI 모델의 성능과 안전성을 체계적으로 평가하기 위한 오픈소스 프레임워크입니다.  
 이 저장소는 Inspect AI의 핵심 기능을 학습하고 실습할 수 있는 한국어 가이드와 예제를 제공합니다.
 
-## 프로젝트 구조
+## 1. 프로젝트 구조
 
 ```
 inspect-ai-guide-ko/
@@ -27,7 +27,7 @@ inspect-ai-guide-ko/
 └── README.md              # 이 파일
 ```
 
-### 주요 파일 설명
+### 1.1. 주요 파일 설명
 
 - **`run.py`**: 모든 예제를 간편하게 실행할 수 있는 통합 스크립트
   - 예제 목록 조회 (`--list`)
@@ -40,9 +40,7 @@ inspect-ai-guide-ko/
   - 로그 디렉토리 경로
   - 샘플 개수 제한 등
 
-</br>
-
-### Examples 설명
+### 1.2. Examples 설명
 
 **01_hello_world.py**
 - 가장 단순한 평가 태스크 작성 방법
@@ -81,9 +79,9 @@ inspect-ai-guide-ko/
 
 <br>
 
-## 실행
+## 2. 실행
 
-### 1. UV 설치
+### 2.1. UV 설치
 
 **macOS / Linux:**
 ```bash
@@ -100,13 +98,13 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 uv --version
 ```
 
-### 2. 의존성 설치
+### 2.2. 의존성 설치
 
 ```bash
 uv sync
 ```
 
-### 3. API 키 설정
+### 2.3. API 키 설정
 
 ```bash
 # .env 파일 생성
@@ -121,7 +119,7 @@ cp env.example .env
 
 > OPENROUTER API 키 발급: https://openrouter.ai/settings/keys
 
-### 4. 기본 실행
+### 2.4. 기본 실행
 
 ```bash
 # 예제 번호로 실행 (가장 간단)
@@ -131,7 +129,7 @@ uv run python run.py 02
 uv run python run.py 09
 ```
 
-### 5. 직접 실행 (고급)
+### 2.5. 직접 실행 (고급)
 
 `run.py` 없이 직접 Inspect AI 명령어 사용:
 
@@ -151,7 +149,7 @@ uv run inspect eval examples/03_multiple_choices.py \
   --log-dir logs/examples/03_multiple_choices
 ```
 
-### 6. 도움말 및 목록 확인
+### 2.6. 도움말 및 목록 확인
 
 ```bash
 # 간단한 예제 목록
@@ -163,9 +161,9 @@ uv run python run.py --help
 
 </br>
 
-## 모델 설정
+## 3. 모델 설정
 
-### config.yaml 구조
+### 3.1. config.yaml 구조
 
 모든 모델 설정은 `config.yaml` 파일에서 중앙 관리됩니다:
 
@@ -210,9 +208,9 @@ target_model: openrouter/meta-llama/llama-3.1-70b-instruct
 
 </br>
 
-## 결과 확인
+## 4. 결과 확인
 
-### Inspect View로 결과 확인
+### 4.1. Inspect View로 결과 확인
 
 실행 결과는 `logs/` 디렉토리에 저장되며, Inspect AI의 웹 인터페이스를 통해 확인할 수 있습니다:
 
@@ -232,9 +230,9 @@ uv run inspect view
 
 </br>
 
-## 고급 사용법
+## 5. 추가 사용법
 
-### 샘플 개수 제한
+### 5.1. 샘플 개수 제한
 
 `config.yaml`에서 `--limit` 옵션 수정:
 
@@ -249,7 +247,7 @@ examples:
       # - "100"  # 100개로 늘리려면 주석 해제
 ```
 
-### 로그 디렉토리 변경
+### 5.2. 로그 디렉토리 변경
 
 로그 저장 위치를 변경하려면:
 
@@ -261,7 +259,7 @@ examples:
       - logs/my_custom_logs/01_hello_world  # 원하는 경로로 변경
 ```
 
-### 새로운 예제 추가
+### 5.3. 새로운 예제 추가
 
 `config.yaml`에 새 예제 추가:
 
@@ -285,7 +283,7 @@ uv run python run.py 10
 
 </br>
 
-## 참고 자료
+## 6. 참고 자료
 
 ### 공식 문서
 - [Inspect AI 공식 문서](https://inspect.ai-safety-institute.org.uk/)
