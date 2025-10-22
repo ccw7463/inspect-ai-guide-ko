@@ -79,6 +79,8 @@ inspect-ai-guide-ko/
 - `json_output`으로 JSON 형식 응답 강제
 - Pydantic 모델로 구조화된 데이터 추출 및 검증
 
+<br>
+
 ## 실행
 
 ### 1. UV 설치
