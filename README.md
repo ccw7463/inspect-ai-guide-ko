@@ -98,13 +98,25 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 uv --version
 ```
 
-### 2.2. 의존성 설치
+### 2.2. 환경 변수 설정
+
+1. 환경 변수 지정 (또는 터미널 재실행해도 작동 가능)
+```bash
+source $HOME/.local/bin/env
+```
+
+2. 인식 및 버전 확인
+```bash
+uv --version
+```
+
+### 2.3. 의존성 설치
 
 ```bash
 uv sync
 ```
 
-### 2.3. API 키 설정
+### 2.4. API 키 설정
 
 ```bash
 # .env 파일 생성
@@ -119,7 +131,7 @@ cp env.example .env
 
 > OPENROUTER API 키 발급: https://openrouter.ai/settings/keys
 
-### 2.4. 기본 실행
+### 2.5. 기본 실행
 
 ```bash
 # 예제 번호로 실행 (가장 간단)
@@ -129,7 +141,7 @@ uv run python run.py 02
 uv run python run.py 09
 ```
 
-### 2.5. 직접 실행 (고급)
+### 2.6. 직접 실행 (고급)
 
 `run.py` 없이 직접 Inspect AI 명령어 사용:
 
@@ -149,7 +161,7 @@ uv run inspect eval examples/03_multiple_choices.py \
   --log-dir logs/examples/03_multiple_choices
 ```
 
-### 2.6. 도움말 및 목록 확인
+### 2.7. 도움말 및 목록 확인
 
 ```bash
 # 간단한 예제 목록
