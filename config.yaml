@@ -9,14 +9,18 @@ examples:
     description: "기본적인 Hello World 테스트 태스크"
     task: examples/01_hello_world.py
     target_model: openai/gpt-4o
-    options: []
+    options:
+      - --log-dir
+      - logs/examples/01_hello_world
     
   "02":
     name: "Security Guide"
     description: "보안 가이드 예제: 시스템 메시지와 AI 채점"
     task: examples/02_security_guide.py
     target_model: openai/gpt-4o
-    options: []
+    options:
+      - --log-dir
+      - logs/examples/02_security_guide
     
   "03":
     name: "Multiple Choices"
@@ -25,7 +29,9 @@ examples:
     target_model: openai/gpt-4o
     options:
       - --limit
-      - "50"
+      - "10" # 샘플 갯수를 의미하며, 인자를 문자열로 지정해야함.
+      - --log-dir
+      - logs/examples/03_multiple_choices
       
   "04":
     name: "Mathematics"
@@ -34,46 +40,51 @@ examples:
     target_model: openai/gpt-4o
     options:
       - --limit
-      - "50"
+      - "10" # 샘플 갯수를 의미하며, 인자를 문자열로 지정해야함.
+      - --log-dir
+      - logs/examples/04_mathematics
       
   "05":
     name: "Tool Use"
     description: "도구 사용 예제"
     task: examples/05_tool_use.py
     target_model: openai/gpt-4o
-    options: []
+    options:
+      - --log-dir
+      - logs/examples/05_tool_use
     
   "06":
     name: "Custom Grader Instance"
     description: "커스텀 채점기 인스턴스 예제"
     task: examples/06_custom_grader_inst.py
     target_model: openai/gpt-4o
-    options: []
+    options:
+      - --log-dir
+      - logs/examples/06_custom_grader_inst
     
   "07":
     name: "Custom Grader Template"
     description: "커스텀 채점기 템플릿 예제"
     task: examples/07_custom_grader_template.py
-    target_model: openai/gpt-4o
-    options: []
+    target_model: openai/gpt-4
+    options:
+      - --log-dir
+      - logs/examples/07_custom_grader_template
     
   "08":
     name: "Multi Turn"
     description: "다중 턴 대화 예제"
     task: examples/08_multi_turn.py
-    target_model: openai/gpt-4o
-    options: []
+    target_model: openai/gpt-4
+    options:
+      - --log-dir
+      - logs/examples/08_multi_turn
     
   "09":
     name: "JSON"
     description: "JSON 형식 응답 예제"
     task: examples/09_json.py
-    target_model: openai/gpt-4o
-    options: []
-    
-  "10":
-    name: "All Attack Test"
-    description: "모든 공격 테스트 예제"
-    task: examples/10_all_attack_test.py
-    target_model: openai/gpt-4o-mini
-    options: []
+    target_model: openrouter/google/gemini-2.5-flash # openrouter 모델도 가능 : openrouter/google/gemini-2.5-flash (https://openrouter.ai/models)
+    options:
+      - --log-dir
+      - logs/examples/09_json
