@@ -42,6 +42,42 @@ inspect-ai-guide-ko/
 
 </br>
 
+### Examples 설명
+
+**01_hello_world.py**
+- 가장 단순한 평가 태스크 작성 방법
+
+**02_security_guide.py**
+- `system_message`로 AI 행동 규칙 설정
+- `model_graded_fact`로 다른 AI가 답변 평가
+
+**03_multiple_choices.py**
+- HuggingFace 데이터셋(HellaSwag) 활용한 객관식 문제 평가
+- `multiple_choice` solver와 `choice` scorer 사용
+
+**04_mathematics.py**
+- GSM8K 수학 문제 데이터셋으로 수치 계산 능력 평가
+- `prompt_template`으로 답변 형식 지정, `match(numeric=True)`로 숫자 비교
+
+**05_tool_use.py**
+- `@tool` 데코레이터로 Python 함수를 AI가 호출 가능한 도구로 변환
+- `use_tools`로 AI에게 함수 실행 권한 부여
+
+**06_custom_grader_inst.py**
+- `model_graded_qa`의 `instructions` 파라미터로 간단한 채점 기준 커스터마이징
+- 기본 템플릿을 유지하면서 평가 기준만 변경
+
+**07_custom_grader_template.py**
+- `template`과 `instructions` 모두 커스터마이징하여 평가 프롬프트 전체 구조 설계
+- 템플릿 변수(`{question}`, `{answer}`, `{criterion}` 등) 활용
+
+**08_multi_turn.py**
+- `input`을 리스트로 제공하여 여러 턴의 대화 히스토리 구성
+- 점진적 신뢰 구축 공격 패턴 등 복잡한 시나리오 평가
+
+**09_json.py**
+- `json_output`으로 JSON 형식 응답 강제
+- Pydantic 모델로 구조화된 데이터 추출 및 검증
 
 ## 실행
 
